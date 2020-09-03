@@ -126,7 +126,7 @@ const data = [
 //add event listener to the expand button
   expandButton.addEventListener('click', () => {
     article.classList.toggle('article-open')
-    //add   to created elements trhe the article div
+    //add new ielements to the articlevdiv
   })
   container.appendChild(articleTitle)
   container.appendChild(articleDate)
@@ -149,8 +149,8 @@ const data = [
    par3.textContent = object.thirdParagraph;
    expandButton.textContent = 'click me';
    
-   
    return container
+   
   }
   let articles = document.querySelector('.articles');
 
