@@ -115,8 +115,8 @@ const data = [
   Refresh the page to see the new article.
   */
 //create the elements
-const newArticle = function articleMaker (object) {
-  const articleContainer = document.createElement('div')
+ function articleMaker (object) {
+  const Container = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
   const par1 = document.createElement('p')
@@ -128,16 +128,33 @@ const newArticle = function articleMaker (object) {
     article.classList.toggle('article-open')
     //add   to created elements trhe the article div
   })
-  articleContainer.appendChild(articleTitle)
-  articleContainer.appendChild(articleDate)
-  articleContainer.appendChild(par1)
-  articleContainer.appendChild(par2)
-  articleContainer.appendChild(par3)
-  articleContainer.appendChild(expandButton)
-
-  articleContainer.classList.add('article')
+  Container.appendChild(articleTitle)
+  Container.appendChild(articleDate)
+  Container.appendChild(par1)
+  Container.appendChild(par2)
+  Container.appendChild(par3)
+  Container.appendChild(expandButton)
+// give new elements classnames
+  Container.classList.add('article')
   articleDate.classList.add('date')
-  button.classList.add('expandButton')
-  
-}
-console.log(newArticle)
+  expandButton.classList.add('expandButton')
+
+   // create the text content for each element
+   
+   
+   articleTitle.textContent = object.title;
+   articleDate.textContent = object.date;
+   par1.textContent = object.firstParagraph;
+   par2.textContent = object.secondParagraph;
+   par3.textContent = object.thirdParagraph;
+   expandButton.textContent = 'click me';
+   
+   
+   return container
+  }
+  let articles = document.querySelector('.articles');
+
+// map over data, add to articles
+data.map(item => {
+  articles.appendChild(articleMaker(item));
+});
