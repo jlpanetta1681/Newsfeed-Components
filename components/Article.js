@@ -116,7 +116,7 @@ const data = [
   */
 //create the elements
  function articleMaker (object) {
-  const Container = document.createElement('div')
+  const container = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
   const par1 = document.createElement('p')
@@ -128,14 +128,14 @@ const data = [
     article.classList.toggle('article-open')
     //add   to created elements trhe the article div
   })
-  Container.appendChild(articleTitle)
-  Container.appendChild(articleDate)
-  Container.appendChild(par1)
-  Container.appendChild(par2)
-  Container.appendChild(par3)
-  Container.appendChild(expandButton)
+  container.appendChild(articleTitle)
+  container.appendChild(articleDate)
+  container.appendChild(par1)
+  container.appendChild(par2)
+  container.appendChild(par3)
+  container.appendChild(expandButton)
 // give new elements classnames
-  Container.classList.add('article')
+  container.classList.add('article')
   articleDate.classList.add('date')
   expandButton.classList.add('expandButton')
 
