@@ -87,7 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
-];
+]
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -114,22 +114,30 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
   */
- function articleMaker(object) {
-   
-   const articleContainer = document.createElement('div');
-   const articleTitle = document.createElement('h2');
-   const articleDate = document.createElement('p');
-   const par1 = document.createElement('p');
-   const par2 = document.createElement('p');
-   const par3 = document.createElement('p');
-   const expandButton = document.createElement('span');
-   
-   artSpan.addEventListener("click", () => {
-     article.classList.toggle("article-open")
-   
-    })
-    return articleMaker()
+//create the elements
+const newArticle = function articleMaker (object) {
+  const articleContainer = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const par1 = document.createElement('p')
+  const par2 = document.createElement('p')
+  const par3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+//add event listener to the expand button
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    //add   to created elements trhe the article div
+  })
+  articleContainer.appendChild(articleTitle)
+  articleContainer.appendChild(articleDate)
+  articleContainer.appendChild(par1)
+  articleContainer.appendChild(par2)
+  articleContainer.appendChild(par3)
+  articleContainer.appendChild(expandButton)
 
+  articleContainer.classList.add('article')
+  articleDate.classList.add('date')
+  button.classList.add('expandButton')
+  
 }
-
-goodssks
+console.log(newArticle)
