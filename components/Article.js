@@ -87,7 +87,7 @@ const data = [
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
-];
+]
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
@@ -110,7 +110,51 @@ const data = [
 
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
-
+  
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
-*/
+  */
+//create the elements
+ function articleMaker (object) {
+  const container = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const par1 = document.createElement('p')
+  const par2 = document.createElement('p')
+  const par3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+//add event listener to the expand button
+  expandButton.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+    //add new ielements to the articlevdiv
+  })
+  container.appendChild(articleTitle)
+  container.appendChild(articleDate)
+  container.appendChild(par1)
+  container.appendChild(par2)
+  container.appendChild(par3)
+  container.appendChild(expandButton)
+// give new elements classnames
+  container.classList.add('article')
+  articleDate.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+   // create the text content for each element
+   
+   
+   articleTitle.textContent = object.title;
+   articleDate.textContent = object.date;
+   par1.textContent = object.firstParagraph;
+   par2.textContent = object.secondParagraph;
+   par3.textContent = object.thirdParagraph;
+   expandButton.textContent = 'click me';
+   
+   return container
+   
+  }
+  let articles = document.querySelector('.articles');
+
+// map over data, add to articles
+data.map(item => {
+  articles.appendChild(articleMaker(item));
+});
